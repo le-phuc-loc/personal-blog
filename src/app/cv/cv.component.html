@@ -1,0 +1,57 @@
+<button printSectionId="print-section" ngxPrint>print</button>
+<div class="cv-wrapper print-section" *ngIf="userInfo$ | async as userInfo">
+  <app-cv-header [userInfo]="userInfo"></app-cv-header>
+
+  <div class="cv-content mt-10">
+    <div class="content-section">
+      <div class="content-section-before">
+        <div class="circle"></div>
+        <div class="line"></div>
+      </div>
+      <div class="content-section-information">
+        <div class="content-section-title">Summary</div>
+        <div class="content-section-content">Summary content</div>
+      </div>
+    </div>
+    <div class="content-section">
+      <div class="content-section-before">
+        <div class="circle"></div>
+        <div class="line"></div>
+      </div>
+      <div class="content-section-information">
+        <div class="content-section-title">Skill highlight</div>
+        <div class="content-section-content">Skill highlight content</div>
+      </div>
+    </div>
+    <div class="content-section">
+      <div class="content-section-before">
+        <div class="circle"></div>
+        <div class="line"></div>
+      </div>
+      <div class="content-section-information">
+        <div class="content-section-title">Experience</div>
+        <div class="content-section-content">Experience content</div>
+      </div>
+    </div>
+    <div class="content-section">
+      <div class="content-section-before">
+        <div class="circle"></div>
+        <div class="line"></div>
+      </div>
+      <div class="content-section-information">
+        <div class="content-section-title">Educations</div>
+        <div class="content-section-content">Educations content</div>
+      </div>
+    </div>
+    <div class="content-section">
+      <div class="content-section-before">
+        <div class="circle"></div>
+        <div class="line"></div>
+      </div>
+      <div class="content-section-information">
+        <div class="content-section-title">Certification</div>
+        <div class="content-section-content">Certification content</div>
+      </div>
+    </div>
+  </div>
+</div>

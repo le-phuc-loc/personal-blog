@@ -1,0 +1,43 @@
+.cv-wrapper {
+  max-width: 1240px;
+  margin: auto;
+  border: 2px orange solid;
+  padding: 0 100px 0 100px;
+}
+
+.content-section {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 35px;
+  padding-bottom: 20px;
+
+  &-before {
+    .circle {
+      width: 30px;
+      height: 30px;
+      background-color: orange;
+      border-radius: 45px;
+    }
+
+    .line {
+      width: 2px;
+      height: calc(100% - 10px);
+      background-color: orange;
+      margin: auto;
+    }
+  }
+  .content-section-information {
+    display: grid;
+    row-gap: 20px;
+    .content-section-title {
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 1rem;
+      color: orange;
+    }
+
+    .content-section-content {
+      margin-top: 20px;
+    }
+  }
+}

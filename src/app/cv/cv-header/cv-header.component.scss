@@ -1,0 +1,32 @@
+.cv-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding-top: 5rem;
+  .avatar {
+    position: relative;
+    width: 200px;
+    padding-top: 100%;
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border: 2px orange solid;
+    }
+  }
+
+  .basic-information {
+    display: grid;
+    padding-left: 100px;
+    .name {
+      font-size: 64px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .title {
+      font-size: 36px;
+    }
+  }
+}

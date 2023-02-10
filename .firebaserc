@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "personal-project-77ff2": {
+      "hosting": {
+        "personal-blog": [
+          "personal-project-77ff2"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "personal-project-77ff2"
+  }
+}

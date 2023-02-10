@@ -1,0 +1,19 @@
+<div class="cv-header">
+  <div class="avatar">
+    <img
+      class="rounded-full"
+      src="{{ userInfo.avatar }}"
+      width="50"
+      height="50"
+    />
+  </div>
+  <div class="basic-information text-left">
+    <div class="uppercase name">{{ userInfo.name }}</div>
+    <div class="title">{{ userInfo.title }}</div>
+    <div class="general-information">
+      <div><b>Birthday</b>: {{ userInfo.dob }}</div>
+      <div><b>Email</b>: {{ userInfo.email }}</div>
+      <div><b>Phone number</b>: {{ userInfo.phone }}</div>
+    </div>
+  </div>
+</div>
