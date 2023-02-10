@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CvHeaderComponent implements OnInit {
   @Input()
   userInfo: any;
+  color = 'orange';
 
   constructor() {}
 

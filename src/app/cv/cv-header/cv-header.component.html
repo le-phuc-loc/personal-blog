@@ -8,7 +8,9 @@
     />
   </div>
   <div class="basic-information text-left">
-    <div class="uppercase name">{{ userInfo.name }}</div>
+    <div class="uppercase name last-word" [appLastWordColor]="color">
+      {{ userInfo.name }}
+    </div>
     <div class="title">{{ userInfo.title }}</div>
     <div class="general-information">
       <div><b>Birthday</b>: {{ userInfo.dob }}</div>
