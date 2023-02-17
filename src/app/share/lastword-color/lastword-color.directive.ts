@@ -15,7 +15,6 @@ export class LastWordColorDirective implements OnInit, AfterViewInit {
 
   constructor(private el: ElementRef<HTMLElement>) {}
   ngAfterViewInit(): void {
-    console.log('aosdoiajsodjiasd');
     if (this.appLastWordColor) {
       const lastWord = this.el.nativeElement.innerHTML.trim().split(' ').pop();
 

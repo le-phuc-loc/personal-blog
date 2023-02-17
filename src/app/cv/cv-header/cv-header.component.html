@@ -2,10 +2,21 @@
   <div class="avatar">
     <img
       class="rounded-full"
-      src="{{ userInfo.avatar }}"
+      src="{{ imageSrc || userInfo.avatar }}"
       width="50"
       height="50"
     />
+    <input
+      type="file"
+      name="image"
+      (change)="onFileSelected($event)"
+      id="avatar"
+      accept="image/*"
+    />
+    <label for="avatar"
+      ><div class="rounded-full overlay avatar-input">
+        <i class="fas fa-2xl fa-camera fa-light text-white"></i></div
+    ></label>
   </div>
   <div class="basic-information text-left">
     <div class="uppercase name last-word" [appLastWordColor]="color">

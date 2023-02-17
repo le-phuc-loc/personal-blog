@@ -23,7 +23,13 @@
       </div>
       <div class="content-section-information">
         <div class="content-section-title">Educations and Certification</div>
-        <div class="content-section-content">Educations content</div>
+        <div class="content-section-content">
+          <ul class="list-disc list-inside">
+            <li *ngFor="let edu of userInfo.educations">
+              {{ edu.title }} ({{ edu.year }})
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="content-section">
@@ -33,7 +39,14 @@
       </div>
       <div class="content-section-information">
         <div class="content-section-title">Summary</div>
-        <div class="content-section-content">{{ userInfo.summary }}</div>
+        <angular-editor
+          *ngIf="false"
+          [placeholder]="'Enter text here...'"
+          [(ngModel)]="userInfo.summary"
+        ></angular-editor>
+        <div>
+          {{ userInfo.summary }}
+        </div>
       </div>
     </div>
     <div class="content-section">
@@ -43,7 +56,29 @@
       </div>
       <div class="content-section-information">
         <div class="content-section-title">Experience</div>
-        <div class="content-section-content">Experience content</div>
+        <div *ngFor="let experience of userInfo.experience">
+          <div class="font-bold">
+            Developer for {{ experience.company }} Company
+          </div>
+          <div class="text-[#7f7f7f]">
+            {{ experience.from | date : "MMMM y" }} -
+            {{
+              experience.to ? (experience.from | date : "MMMM y") : "Present"
+            }}
+          </div>
+          <div *ngFor="let project of experience.projects">
+            <div>
+              <div class="underline font-bold">Project {{ project.name }}</div>
+              <ul class="list-disc pl-[1em]">
+                <li><b> Description: </b>{{ project.description }}</li>
+                <li><b> Technologies: </b>{{ project.technologies }}</li>
+                <li>
+                  <b> Responsibilities: </b>{{ project.responsibilities }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
