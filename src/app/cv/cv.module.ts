@@ -6,10 +6,13 @@ import { CvHeaderComponent } from './cv-header/cv-header.component';
 import { NgxPrintModule } from 'ngx-print';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularEditorModule } from '@kolkov/angular-editor';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CvExperienceComponent } from './cv-experience/cv-experience.component';
+import { MatFormFieldModule, MatNativeDateModule } from '@angular/material';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
-  declarations: [CvComponent, CvHeaderComponent],
+  declarations: [CvComponent, CvHeaderComponent, CvExperienceComponent],
   imports: [
     CommonModule,
     NgxPrintModule,
@@ -17,6 +20,10 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     AngularEditorModule,
     FormsModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
 })
 export class CvModule {}

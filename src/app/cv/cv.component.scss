@@ -25,18 +25,20 @@
       margin: auto;
     }
   }
-  .content-section-information {
-    display: grid;
-    row-gap: 20px;
-    .content-section-title {
-      font-size: 34px;
-      font-weight: 700;
-      line-height: 1rem;
-      color: orange;
-    }
+  ::ng-deep {
+    .content-section-information {
+      display: grid;
+      row-gap: 20px;
+      .content-section-title {
+        font-size: 34px;
+        font-weight: 700;
+        line-height: 1rem;
+        color: orange;
+      }
 
-    .content-section-content {
-      margin-top: 20px;
+      .content-section-content {
+        margin-top: 20px;
+      }
     }
   }
 }
