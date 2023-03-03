@@ -1,0 +1,57 @@
+<h5 class="text-center">Cell Editing</h5>
+<!-- <button (click)="add()">Add</button> -->
+<div class="card" *ngIf="report$ | async as report">
+  Capital: {{ report.capital }} Total Profit: {{ report.totalProfit }} Current
+  Equity: {{ report.currentEquity }}
+  <p-table
+    [value]="report.monthlyReport"
+    dataKey="monthYear"
+    [tableStyle]="{ 'min-width': '50rem' }"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 25%">Month Year</th>
+        <th style="width: 25%">Base</th>
+        <th style="width: 25%">Final</th>
+        <th style="width: 25%">Profit</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-mReport let-editing="editing">
+      <tr>
+        <td [pEditableColumn]="mReport.monthYear" pEditableColumnField="mYear">
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              <input type="month" pInputText [(ngModel)]="mReport.monthYear" />
+            </ng-template>
+            <ng-template pTemplate="output">
+              {{ mReport.monthYear | date : "MMMM y" }}
+            </ng-template>
+          </p-cellEditor>
+        </td>
+        <td [pEditableColumn]="mReport.base" pEditableColumnField="base">
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              <input type="number" pInputText [(ngModel)]="mReport.base" />
+            </ng-template>
+            <ng-template pTemplate="output">
+              {{ mReport.base | currency : "USD" }}
+            </ng-template>
+          </p-cellEditor>
+        </td>
+        <td [pEditableColumn]="mReport.final" pEditableColumnField="final">
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              <input type="number" pInputText [(ngModel)]="mReport.final" />
+            </ng-template>
+            <ng-template pTemplate="output">
+              {{ mReport.final | currency : "USD" }}
+            </ng-template>
+          </p-cellEditor>
+        </td>
+        <td [pEditableColumn]="mReport.profit">
+          {{ mReport.profit | currency : "USD" }}
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

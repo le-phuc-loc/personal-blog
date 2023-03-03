@@ -1,0 +1,34 @@
+<div class="home-wrapper" *ngIf="userInfo$ | async as userInfo">
+  <div class="mid-ground" [@rightToLeft]>
+    <div class="summary typewriter">
+      <div class="typed">I am Software Developer</div>
+    </div>
+    <div class="contact-me">
+      <div>Contact me:</div>
+      <div class="list-icon">
+        <a href="mailto:myemailaddress@gmail.com">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="mailto:myemailaddress@gmail.com">
+          <i class="fas fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="mailto:myemailaddress@gmail.com">
+          <i class="fas fa-brands fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="name" [@topToBottom] [appLastWordColor]="'orange'">
+    {{ userInfo.name }}
+  </div>
+  <div class="avatar rounded-full" [@leftToRight]>
+    <div class="avatar-image rounded-full">
+      <img
+        class="rounded-full w-full"
+        src="{{ userInfo.avatar }}"
+        width="50"
+        height="50"
+      />
+    </div>
+  </div>
+</div>

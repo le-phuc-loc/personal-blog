@@ -1,3 +1,4 @@
+import { PrimeModule } from './../share/prime/prime.module';
 import { ShareModule } from './../share/share.module';
 import { CvComponent } from './cv.component';
 import { NgModule } from '@angular/core';
@@ -8,8 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CvExperienceComponent } from './cv-experience/cv-experience.component';
-import { MatFormFieldModule, MatNativeDateModule } from '@angular/material';
-import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [CvComponent, CvHeaderComponent, CvExperienceComponent],
@@ -20,10 +19,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     HttpClientModule,
     AngularEditorModule,
     FormsModule,
-    MatFormFieldModule,
     ReactiveFormsModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
   ],
 })
 export class CvModule {}

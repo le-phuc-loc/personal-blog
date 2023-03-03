@@ -1,14 +1,40 @@
 .cv-wrapper {
   max-width: 1240px;
   margin: auto;
-  padding: 0 100px 0 100px;
+  padding: 30px 50px 0px 50px;
+}
+
+.review {
+  color: black;
+  background-color: white;
+  ::ng-deep {
+    .btn-add-icon {
+      display: none;
+      visibility: hidden;
+    }
+
+    .avatar {
+      input,
+      label {
+        display: none;
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+* {
+  outline: none;
+  color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
 }
 
 .content-section {
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 35px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 
   &-before {
     .circle {
@@ -20,7 +46,7 @@
 
     .line {
       width: 2px;
-      height: calc(100% - 10px);
+      height: calc(100% + 10px);
       background-color: orange;
       margin: auto;
     }
@@ -30,9 +56,9 @@
       display: grid;
       row-gap: 20px;
       .content-section-title {
-        font-size: 34px;
+        font-size: 40px;
         font-weight: 700;
-        line-height: 1rem;
+        line-height: 1.2rem;
         color: orange;
       }
 

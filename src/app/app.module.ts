@@ -10,12 +10,15 @@ import { AppComponent } from './app.component';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { CvModule } from './cv/cv.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
+import { StatisticModule } from './statistic/statistic.module';
+import { HomeComponent } from './home/home.component';
+import { ShareModule } from './share/share.module';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -26,6 +29,9 @@ import { AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
     AngularFireStorageModule,
     CvModule,
     ReactiveFormsModule,
+    StatisticModule,
+    FormsModule,
+    ShareModule,
   ],
   providers: [
     { provide: FIREBASE_OPTIONS, useValue: environment.firebase },

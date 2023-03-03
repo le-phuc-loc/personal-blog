@@ -1,18 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { PersonalInformationService } from './../share/service/personal-information.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-cv',
   templateUrl: './cv.component.html',
   styleUrls: ['./cv.component.scss'],
 })
-export class CvComponent implements OnInit {
-  userInfo$ = new Observable<any>();
+export class CvComponent {
+  userInfo$ = this.personalInfo.getUserInfo();
   isLinear = true;
-  constructor(private db: AngularFireDatabase) {}
+  reviewMode = true;
 
-  ngOnInit(): void {
-    this.userInfo$ = this.db.object('info').valueChanges();
-  }
+  constructor(private personalInfo: PersonalInformationService) {}
 }

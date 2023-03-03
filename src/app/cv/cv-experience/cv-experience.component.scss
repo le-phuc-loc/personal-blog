@@ -1,0 +1,29 @@
+.example-form-field {
+  width: 200px;
+}
+
+.company-info-form form {
+  display: grid;
+  gap: 20px;
+  width: fit-content;
+  justify-content: space-between;
+}
+
+.working-range {
+  display: flex;
+  gap: 20px;
+}
+
+.list-company {
+  margin-top: 30px;
+  display: grid;
+  gap: 40px;
+}
+
+.add-company-dialog {
+  ::ng-deep {
+    .p-dialog-content {
+      overflow-y: unset;
+    }
+  }
+}

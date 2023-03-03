@@ -7,67 +7,65 @@
   >
     print
   </button>
+  <button
+    pButton
+    type="button"
+    label="Help"
+    class="p-button-help ml-2"
+    (click)="reviewMode = !reviewMode"
+  ></button>
 </div>
-<div
-  class="cv-wrapper"
-  id="print-section"
-  *ngIf="userInfo$ | async as userInfo"
->
-  <app-cv-header [userInfo]="userInfo"></app-cv-header>
+<div id="print-section">
+  <div
+    class="cv-wrapper"
+    [class.review]="reviewMode"
+    *ngIf="userInfo$ | async as userInfo"
+  >
+    <app-cv-header [userInfo]="userInfo"></app-cv-header>
 
-  <div class="cv-content mt-10">
-    <div class="content-section">
-      <div class="content-section-before">
-        <div class="circle"></div>
-        <div class="line"></div>
-      </div>
-      <div class="content-section-information">
-        <div class="content-section-title">
-          Educations and Certification
-          <button class="btn absolute ml-2">
-            <i class="fas fa-plus"></i>
-          </button>
+    <div class="cv-content mt-16">
+      <div class="content-section">
+        <div class="content-section-before">
+          <div class="circle"></div>
+          <div class="line"></div>
         </div>
-        <div class="content-section-content">
-          <ul class="list-disc list-inside">
-            <li *ngFor="let edu of userInfo.educations">
-              {{ edu.title }} ({{ edu.year }})
-            </li>
-          </ul>
+        <div class="content-section-information">
+          <div class="content-section-title">Educations and Certification</div>
+          <div class="content-section-content">
+            <ul class="list-disc list-inside">
+              <li *ngFor="let edu of userInfo.educations">
+                {{ edu.title }} ({{ edu.year }})
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="content-section">
-      <div class="content-section-before">
-        <div class="circle"></div>
-        <div class="line"></div>
-      </div>
-      <div class="content-section-information">
-        <div class="content-section-title">
-          Summary
-          <button class="btn absolute ml-2">
-            <i class="fas fa-plus"></i>
-          </button>
+      <div class="content-section">
+        <div class="content-section-before">
+          <div class="circle"></div>
+          <div class="line"></div>
         </div>
-        <angular-editor
-          *ngIf="false"
-          [placeholder]="'Enter text here...'"
-          [(ngModel)]="userInfo.summary"
-        ></angular-editor>
-        <div>
-          {{ userInfo.summary }}
+        <div class="content-section-information">
+          <div class="content-section-title">Summary</div>
+          <angular-editor
+            *ngIf="false"
+            [placeholder]="'Enter text here...'"
+            [(ngModel)]="userInfo.summary"
+          ></angular-editor>
+          <div>
+            {{ userInfo.summary }}
+          </div>
         </div>
       </div>
-    </div>
-    <div class="content-section">
-      <div class="content-section-before">
-        <div class="circle"></div>
-        <div class="line"></div>
+      <div class="content-section">
+        <div class="content-section-before">
+          <div class="circle"></div>
+          <div class="line"></div>
+        </div>
+        <app-cv-experience
+          class="content-section-information"
+        ></app-cv-experience>
       </div>
-      <app-cv-experience
-        class="content-section-information"
-        [userInfo]="userInfo"
-      ></app-cv-experience>
     </div>
   </div>
 </div>
